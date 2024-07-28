@@ -92,7 +92,7 @@ const UserPage = () => {
           if (location.lat && location.lng) {
             try {
               console.log("Hitting.");
-              await axios.post('http://3.110.50.255:7000/api/loc/recurring/', {
+              await axios.post('https://speedtr.online/api/loc/recurring/', {
                 userId,
                 name,
                 vehicleNo: localStorage.getItem('vehicleNo'),

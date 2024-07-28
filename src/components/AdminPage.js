@@ -21,7 +21,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchOverspeedingUsers = async () => {
       try {
-        const response = await axios.get('http://3.110.50.255:7000/api/admin/speedingusers');
+        const response = await axios.get('https://speedtr.online/api/admin/speedingusers');
         setOverspeedingUsers(response.data.data);
       } catch (error) {
         console.error('Error fetching overspeeding users:', error);
@@ -45,7 +45,7 @@ const AdminPage = () => {
       /* eslint-disable-next-line no-restricted-globals */
       let cn = confirm("Are You Sure You want to delete older records?");
       if(cn){
-        const response = await axios.get('http://3.110.50.255:7000/api/admin/deleteoldrecords/');
+        const response = await axios.get('https://speedtr.online/api/admin/deleteoldrecords/');
         if (response.status === 200) {
           alert('Successfully deleted!');
         }
@@ -85,7 +85,7 @@ const AdminPage = () => {
                     return;
                   }
                   try {
-                    await axios.post('http://3.110.50.255:7000/api/admin/setlimit/', {
+                    await axios.post('https://speedtr.online/api/admin/setlimit/', {
                       vehicleType,
                       speedLimit,
                     });

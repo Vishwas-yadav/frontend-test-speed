@@ -18,7 +18,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('http://3.110.50.255:7000/api/user/register/', { name, email, password, phone });
+      const response = await axios.post('https://speedtr.online/api/user/register/', { name, email, password, phone });
       alert(response.data.msg);
       navigate('/login');
     } catch (error) {

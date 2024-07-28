@@ -11,7 +11,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://3.110.50.255:7000/api/user/login/', { email, password });
+      const response = await axios.post('https://speedtr.online/api/user/login/', { email, password });
       const { token } = response.data;
       localStorage.setItem('token', token);
       const decoded = jwtDecode(token);
